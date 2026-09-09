@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trò Chơi Tiếng Việt</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #e0f7fa; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .game-box { background-color: white; padding: 30px; border-radius: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); max-width: 600px; text-align: center; }
+        h3 { color: #00796b; margin-top: 0; font-size: 1.2rem; }
+        h1 { color: #ff5722; font-size: 1.8rem; }
+        .question { font-size: 1.2rem; font-weight: bold; margin-bottom: 20px; color: #333; }
+        .btn { display: block; width: 100%; padding: 12px; margin: 10px 0; background-color: #4caf50; color: white; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer; transition: 0.3s; }
+        .btn:hover { background-color: #388e3c; transform: scale(1.02); }
+        #feedback { margin-top: 20px; font-size: 1.3rem; font-weight: bold; min-height: 30px; }
+    </style>
+</head>
+<body>
+
+    <div class="game-box">
+        <h3>Trường Tiểu học Yên Thế - Lớp 4/1</h3>
+        <h1>Thử Tài Lập Luận</h1>
+        
+        <div class="question">
+            Người viết muốn nói gì qua đoạn văn "Thi nhạc"?
+        </div>
+        
+        <!-- Các đáp án dựa trên Bài tập 1a SGK -->
+        <button class="btn" onclick="checkAnswer(true)">A. Nêu những lí do yêu thích câu chuyện Thi nhạc.</button>
+        <button class="btn" onclick="checkAnswer(false)">B. Thuật lại diễn biến của buổi thi nhạc.</button>
+        <button class="btn" onclick="checkAnswer(false)">C. Tả hình dáng, điệu bộ của các nhân vật trong câu chuyện.</button>
+
+        <div id="feedback"></div>
+    </div>
+
+    <script>
+        function checkAnswer(isCorrect) {
+            const feedback = document.getElementById('feedback');
+            if(isCorrect) {
+                feedback.style.color = '#4caf50';
+                feedback.innerText = '🎉 Chính xác! Cô khen em nhé! 🎉';
+            } else {
+                feedback.style.color = '#f44336';
+                feedback.innerText = '💡 Chưa đúng rồi, em hãy đọc kĩ lại đoạn văn nhé!';
+            }
+        }
+    </script>
+
+</body>
+</html>
